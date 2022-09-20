@@ -1,0 +1,105 @@
+/*Inserir fontes*/
+
+@font-face {
+    font-family: 'Jost';
+    src: url(fonts/jost-cufonfonts/Jost500Medium.otf);
+}
+
+@font-face {
+    font-family: 'Jost Bold';
+    src: url(fonts/jost-cufonfonts/Jost700Bold.otf);
+}
+
+@font-face {
+    font-family: 'Jost Light';
+    src: url(fonts/jost-cufonfonts/Jost300Light.otf);
+}
+
+@font-face {
+    font-family: 'Press Start 2P' ;
+    src: url(fonts/press-start-2p-cufonfonts/PressStart2P-Regular.ttf);
+}
+
+    /*CSS só da DIV*/
+
+div.imagem{
+    display:inline-block;
+}
+
+div.nome{
+    display:inline-block;
+}
+
+div.menu{
+    display: inline-block;
+    float: right;
+    padding: 135px 50px 0px 0px;
+}
+
+div.centralizar{
+    margin: 0 auto;
+}
+
+div.row {
+    display: flex;
+  }
+  
+div.column {
+    border: solid 2px black;
+    flex: 50%;
+}
+
+div.centralHome{
+    width: 50%;
+    margin: auto;
+    text-align: justify;
+}
+
+/*Body*/
+
+body{
+    background-color: #775194;
+}
+
+/*Textos*/
+
+h1.meio{
+    padding-left: 120px;
+    font-family: 'Jost';
+    font-size: 60px ;
+}
+
+h3{
+    font-family: 'Jost Light';
+    font-size: 20px ;
+}
+
+b{
+    font-family: 'Jost Bold';
+}
+
+/*Imagem*/
+
+img.imagem{
+    max-width:200px;
+    max-height:240px;
+}
+
+/*Listas*/
+
+li{
+    font-size: 30px;
+    font-family: 'Jost';
+}
+
+
+/**/
+
+a{
+    color:black;
+}
+
+hr{
+    border: solid 2px #401F59;
+}
+
