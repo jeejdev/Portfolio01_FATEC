@@ -20,39 +20,65 @@
     src: url(fonts/press-start-2p-cufonfonts/PressStart2P-Regular.ttf);
 }
 
-    /*CSS só da DIV*/
+/*Soft Reset*/
 
-div.imagem{
-    display:inline-block;
-}
-
-div.nome{
-    display:inline-block;
-}
-
-div.menu{
-    display: inline-block;
-    float: right;
-    padding: 135px 50px 0px 0px;
-}
-
-div.centralizar{
-    margin: 0 auto;
-}
-
-div.row {
-    display: flex;
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box
   }
-  
-div.column {
-    border: solid 2px black;
-    flex: 50%;
+
+/*DIV / NAVS*/
+div.principal{
+    padding-left: 7vw;
+    padding-top: 5vh;
+}
+
+div#principalEducacao{
+    padding-left: 7vw;
+    padding-top: 5vh;
+}
+
+div#principalContatos{
+    padding-left: 7vw;
+    padding-top: 5vh;
+}
+
+div#principalPortfolio{
+    padding-left: 7vw;
+    padding-top: 5vh;
 }
 
 div.centralHome{
-    width: 50%;
-    margin: auto;
-    text-align: justify;
+    padding-left: 9vw;
+}
+
+div.nome{
+    display: inline-block;
+    flex: auto;
+}
+
+#menuTextos{
+    padding-top: 1.8vh;
+}
+
+div.nome, .imagem{
+    display: inline-block;
+}
+
+.txtNome{
+    padding-left: 20px;
+}
+
+
+nav.menu{
+    min-width: 500px;
+    height: 8vh;
+    border-bottom: 3px solid black ;
+    padding-right: 20px;
+    text-align: right;
+    background-color: #401F59;
 }
 
 /*Body*/
@@ -63,26 +89,45 @@ body{
 
 /*Textos*/
 
+h1.txtNome{
+    font-family: 'Jost';
+    font-size: 2.3rem;
+}
+
 h1.meio{
     padding-left: 120px;
     font-family: 'Jost';
-    font-size: 60px ;
+    font-size: 3rem;
 }
 
-h3{
+h3, h2{
     font-family: 'Jost Light';
-    font-size: 20px ;
+    font-size: 1.4rem;
 }
 
 b{
     font-family: 'Jost Bold';
 }
 
+a, span{
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+    1px 1px 0 #000;  
+    font-size: 1.8rem;
+    font-family: 'Jost';
+    color:rgb(207, 207, 207);
+    text-decoration: none;
+}
+
 /*Imagem*/
 
 img.imagem{
-    max-width:200px;
-    max-height:240px;
+    margin: 5%;
+    border: 3px solid black ;
+    max-width:30vw;
+    max-height:30vh;
 }
 
 /*Listas*/
@@ -93,13 +138,8 @@ li{
 }
 
 
-/**/
-
-a{
-    color:black;
-}
+/*Outros*/
 
 hr{
     border: solid 2px #401F59;
 }
-
