@@ -1,0 +1,25 @@
+/*Inserir fontes*/
+
+@font-face {
+    font-family: 'Jost';
+    src: url(fonts/jost-cufonfonts/Jost500Medium.otf);
+}
+
+@font-face {
+    font-family: 'Jost Bold';
+    src: url(fonts/jost-cufonfonts/Jost700Bold.otf);
+}
+
+@font-face {
+    font-family: 'Jost Light';
+    src: url(fonts/jost-cufonfonts/Jost300Light.otf);
+}
+
+@font-face {
+    font-family: 'Press Start 2P' ;
+    src: url(fonts/press-start-2p-cufonfonts/PressStart2P-Regular.ttf);
+}
+
+h2{
+    font-family: 'Jost';
+}
