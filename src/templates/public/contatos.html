@@ -2,20 +2,46 @@
 
 {% block title %} Portfólio - Contatos {% endblock %}
 
+{% block linkAtivo %}class="nav-link" aria-current="page"{% endblock %}
+{% block linkAtivoPortfolio %}class="nav-link" aria-current="page"{% endblock %}
+{% block linkAtivoEducacao %}class="nav-link" aria-current="page"{% endblock %}
+{% block linkAtivoContatos %}class="nav-link active" aria-current="page"{% endblock %}
 {% block content %}
 
-        <h1 >Contatos:</h1>
-            <div class="centralHome">
-                <ul>
-                    <li>
-                        E-mail: dev.jeejor@gmail.com
-                    </li>
-
-                    <li>
-                        Celular: (12) 98850-9633
-                    </li>
-                </ul>
+        <div class="container">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <i class="bi bi-envelope">
+                        <span>dev.jeejor@gmail.com</span>
+                    </i>
+                </div>
             </div>
+            <div class="row">
+                <div class="col-6 d-flex justify-content-center">
+                    <i class="bi bi-phone">
+                        <span>(12) 98850-9633</span>
+                    </i>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                    <i class="bi bi-github">
+                        <a class="p-1 rounded" href="https://github.com/jeejinf">Jean Faria</a>
+                    </i>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 d-flex justify-content-center">
+                    <i class="bi bi-instagram">
+                        <a class="p-1 rounded" href="https://instagram.com/jeejinf">@jeejinf</a>
+                    </i>
+                </div>
+                <div class="col-6 d-flex justify-content-center">
+                    <i class="bi bi-linkedin">
+                        <a class="p-1 rounded" href="https://www.linkedin.com/in/jean-faria-5a4b201b9/">Jean Faria</a>
+
+                    </i>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
