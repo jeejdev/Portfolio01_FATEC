@@ -2,26 +2,64 @@
 
 {% block title %} Portfólio - Home {% endblock %}
 
-{% block linkAtivo %}class="nav-link active" aria-current="page"{% endblock %}
-{% block linkAtivoPortfolio %}class="nav-link" aria-current="page"{% endblock %}
-{% block linkAtivoEducacao %}class="nav-link" aria-current="page"{% endblock %}
-{% block linkAtivoContatos %}class="nav-link" aria-current="page"{% endblock %}
+{% block linkAtivo %}class="nav-link active" aria-current="page"{% endblock linkAtivo %}
+{% block linkAtivoPortfolio %}class="nav-link"{% endblock linkAtivoPortfolio %}
+{% block linkAtivoEducacao %}class="nav-link"{% endblock linkAtivoEducacao %}
+{% block linkAtivoContatos %}class="nav-link"{% endblock linkAtivoContatos %}
 
 
 {% block content %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-3">
+<div class="container text-center mt-5 pt-5">
+    <div class="row align-items-center">
+        <div class="col-5">
             <img src="../../static/images/fotopessoal.jpg" class="img-fluid" alt="Developer Jean Faria">
         </div>
-        <div class="col-9">
-            <h1>Olá, mundo!</h1>
-
-            <h2>Meu nome é <b>Jean Faria</b>, tenho 20 anos, e estou atualmente cursando <b>Desenvolvimento de Software Multiplataforma</b> na <b>FATEC SJC!</b></h2>
-
+        <div class="col-7">
+            <div class="intro">
+                <h1 class="typing"></h1>
+            </div>
+            <h2>Meu nome é <b>Jean Faria</b>, tenho <b>20 anos</b>, e estou cursando <b>Desenvolvimento de Software Multiplataforma</b> na <b>FATEC SJC!</b></h2>
         </div>
     </div>
 </div>
+
+<script>
+    const texts = ['Olá, mundo!','Hello, world!','Hola, mundo!'];
+var count = 0;
+var index = 0;
+var decrement = 0;
+var currentText = '';
+var letter = '';
+
+function sleep(delay){
+    return new Promise(resolve => setTimeout(resolve,delay));
+}
+
+const typeWrite = async() =>{
+  if (count == texts.length)
+  {
+    count = 0;
+  }
+  currentWord = texts[count];
+  currentLetter = currentWord.slice(0,++index);
+  document.querySelector(".typing").textContent = currentLetter;
+  if(index == currentWord.length)
+  {
+    await sleep(1500);
+    while(index > 0)
+    {
+      currentLetter = currentWord.slice(0,--index);
+      document.querySelector(".typing").textContent = currentLetter;
+      await sleep(50);
+    }
+    count++;
+    index = 0;
+    await sleep(500);
+  }
+  setTimeout(typeWrite,Math.random()*200+50);
+}
+typeWrite();
+</script>
 
 {% endblock %}

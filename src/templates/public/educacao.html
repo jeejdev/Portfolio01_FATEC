@@ -2,37 +2,83 @@
 
 {% block title %} Portfólio - Educação {% endblock %}
 
-{% block linkAtivo %}class="nav-link" aria-current="page"{% endblock %}
-{% block linkAtivoPortfolio %}class="nav-link" aria-current="page"{% endblock %}
+{% block linkAtivo %}class="nav-link"{% endblock %}
+{% block linkAtivoPortfolio %}class="nav-link"{% endblock %}
 {% block linkAtivoEducacao %}class="nav-link active" aria-current="page"{% endblock %}
-{% block linkAtivoContatos %}class="nav-link" aria-current="page"{% endblock %}
+{% block linkAtivoContatos %}class="nav-link"{% endblock %}
 
 
 {% block content %}
 
+<section class="timeline">
+    <ul>
+      <li>
+        <div>
+          <time>2002</time>
+          <b>Eu nasci!</b>
+        </div>
+      </li>
+      <li>
+        <div>
+          <time>2018</time>
+          <b>Conclusão do Ensino Médio</b>
+          <br>
+          E. E. Deputado Benedito Matarazzo
+        </div>
+      </li>
+      <li>
+        <div>
+          <time>2019</time>
+          <b>Conclusão do Ensino Técnico</b>
+          <br>
+          Técnico em Eletrônica - CEPHAS
+        </div>
+      </li>
+      <li>
+        <div>
+          <time>2/2022</time>
+          <b>Início do Ensino Superior</b>
+          <br>
+          Fatec SJC - Jessen Vidal
+        </div>
+      </li>
+    </ul>
+  </section>
 
-        <section>
-            <div id="principalEducacao">
-                <h1 class="meio">Educação:</h1>
-                    <div class="centralHome">
-                        <ul>
-                            <li>ensino médio:
-                                <br>
-                                E. E. Dep. Benedito <b>Matarazzo</b>
-                            </li>
-                            <br>
-                            <li>ensino técnico:
-                                <br>
-                                <b>CEPHAS</b> - Eletrônica
-                            </li>
-                            <br>
-                            <li>ensino superior:
-                                <br>
-                                <b>FATEC</b> Profº Jessen Vidal, SJC
-                            </li>
-                        </ul>
-                    </div>
-            </div>
-        </section>
+<script>
+    (function () {
+  "use strict";
+
+  // define variables
+  var items = document.querySelectorAll(".timeline li");
+
+  // check if an element is in viewport
+  // http://stackoverflow.com/questions/123999/how-to-tell-if-a-dom-element-is-visible-in-the-current-viewport
+  function isElementInViewport(el) {
+    var rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <=
+        (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
+  function callbackFunc() {
+    for (var i = 0; i < items.length; i++) {
+      if (isElementInViewport(items[i])) {
+        items[i].classList.add("in-view");
+      }
+    }
+  }
+
+  // listen for events
+  window.addEventListener("load", callbackFunc);
+  window.addEventListener("resize", callbackFunc);
+  window.addEventListener("scroll", callbackFunc);
+})();
+
+</script>
 
 {% endblock %}

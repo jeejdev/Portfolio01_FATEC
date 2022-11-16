@@ -16,11 +16,323 @@
 }
 
 @font-face {
-    font-family: 'Press Start 2P' ;
+    font-family: 'Press Start 2P';
     src: url(fonts/press-start-2p-cufonfonts/PressStart2P-Regular.ttf);
 }
 
-h2{
+b{
+    font-family: 'Jost Bold';
+}
+
+h1, h2, nav, div, h5, p {
     font-family: 'Jost';
 }
 
+h5{
+    font-size: 2rem;
+}
+
+p{
+    font-size: 1.5rem;
+}
+
+body {
+    background: #9B8DA6;
+    color: #fff;
+}
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline{
+    padding-bottom: 10%;
+}
+
+.timeline ul {
+    background: #9B8DA6;
+    padding: 50px 0;
+}
+
+.timeline ul li {
+    list-style-type: none;
+    position: relative;
+    width: 6px;
+    margin: 0 auto;
+    padding-top: 50px;
+    background: #fff;
+}
+
+.timeline ul li::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: inherit;
+    z-index: 1;
+}
+
+.timeline ul li div {
+    position: relative;
+    bottom: 0;
+    width: 400px;
+    padding: 15px;
+    background: #775194;
+}
+
+.timeline ul li div::before {
+    content: "";
+    position: absolute;
+    bottom: 7px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+
+.timeline ul li:nth-child(odd) div {
+    left: 45px;
+}
+
+.timeline ul li:nth-child(odd) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #775194 transparent transparent;
+}
+
+.timeline ul li:nth-child(even) div {
+    left: -439px;
+}
+
+.timeline ul li:nth-child(even) div::before {
+    right: -15px;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent #775194;
+}
+
+time {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+/* EFEITOS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul li::after {
+    transition: background 0.5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+    background: #401F59;
+}
+
+.timeline ul li div {
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+    transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div {
+    transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+    transform: none;
+    visibility: visible;
+    opacity: 1;
+}
+
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+    .timeline ul li div {
+        width: 250px;
+    }
+
+    .timeline ul li:nth-child(even) div {
+        left: -289px;
+        /*250+45-6*/
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .timeline ul li {
+        margin-left: 20px;
+    }
+
+    .timeline ul li div {
+        width: calc(100vw - 91px);
+    }
+
+    .timeline ul li:nth-child(even) div {
+        left: 45px;
+    }
+
+    .timeline ul li:nth-child(even) div::before {
+        left: -15px;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent #775194 transparent transparent;
+    }
+}
+
+
+/* EXTRA/CLIP PATH STYLES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.timeline-clippy ul li::after {
+    width: 40px;
+    height: 40px;
+    border-radius: 0;
+}
+
+.timeline-rhombus ul li::after {
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+.timeline-rhombus ul li div::before {
+    bottom: 12px;
+}
+
+.timeline-star ul li::after {
+    clip-path: polygon(50% 0%,
+            61% 35%,
+            98% 35%,
+            68% 57%,
+            79% 91%,
+            50% 70%,
+            21% 91%,
+            32% 57%,
+            2% 35%,
+            39% 35%);
+}
+
+.timeline-heptagon ul li::after {
+    clip-path: polygon(50% 0%,
+            90% 20%,
+            100% 60%,
+            75% 100%,
+            25% 100%,
+            0% 60%,
+            10% 20%);
+}
+
+.timeline-infinite ul li::after {
+    animation: scaleAnimation 2s infinite;
+}
+
+@keyframes scaleAnimation {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.25);
+    }
+
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+.intro {
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position:center;
+  }
+
+.typing {
+    height: auto;
+    margin-left: 10px;
+    position: relative;
+  }
+  
+  .typing::after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    width: 1px;
+    height: 100%;
+    border-right: 2px solid white;
+    animation: blink 0.5s ease infinite;
+  }
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  nav{
+    border-bottom: #401F59 solid 2px;
+  }
+
+  .img-fluid{
+    width: 35vw;
+    border-radius: 10%;
+    border: #401F59 solid 2px;
+  }
+
+  #fundoContatos{
+    height: 40vh;
+    width: 90vw;
+    background-color: #775194;
+    border-radius: 15px;
+    border: #401F59 solid 2px;
+  }
+
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  
+  #mainPort{
+    width: 30vw;
+  }
+
+  @media screen and (max-width: 680px) {
+    #mainPort {
+        width: 60vw;
+    }
+  }
+
+/** FOOTER **/
+
+#footer{
+    border-top: #401F59 solid 2px;
+    background-color: #775194;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    z-index: 2;
+}
+
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
