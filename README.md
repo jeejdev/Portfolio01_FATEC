@@ -2,7 +2,7 @@
 
 Primeiro Semestre, FATEC - Portfólio pessoal, aula do Profº Fabrício de Carvalho.
 
-Tecnologias utilizadas: HTML, CSS e Python (microframework Flask)
+Tecnologias utilizadas: HTML, CSS (lib Bootstrap) e Python (microframework Flask)
 
 --- 
 
