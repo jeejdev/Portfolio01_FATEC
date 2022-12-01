@@ -4,6 +4,8 @@ Primeiro Semestre, FATEC - Portfólio pessoal, aula do Profº Fabrício de Carva
 
 Tecnologias utilizadas: HTML, CSS (lib Bootstrap) e Python (microframework Flask)
 
+Deploy (Vercel): https://portfoliojean.vercel.app/
+
 --- 
 
 <h3>Aluno: Jean Lucas de Faria Silva</h3>
